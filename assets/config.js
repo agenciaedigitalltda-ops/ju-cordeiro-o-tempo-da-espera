@@ -53,7 +53,7 @@ window.APP_CONFIG = {
   /* ---------- Integrações ---------- */
   integracoes: {
     appsScriptUrl: "https://script.google.com/macros/s/AKfycbxi9RjsSwYpNAWl773bXdATHOQEJWqKMJ6xcDnc-S_jZci3ksrm7u0rR1Jv2hU-bZgjcg/exec",
-    metaPixelId: ""      // só os números do Pixel
+    metaPixelId: "1778415356634774"
   },
 
   pixel: {
