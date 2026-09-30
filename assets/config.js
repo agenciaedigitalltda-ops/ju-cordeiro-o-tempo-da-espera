@@ -157,6 +157,8 @@ window.APP_CONFIG = {
           titulo: "Veja um pouco do nosso trabalho",
           botao: "É isso que eu quero!",
           segundos: 2,        // tempo de cada foto
+          formato: "2/3",     // formato das fotos (vertical de câmera): mostra a foto inteira, sem cortar
+          tamanho: 0.7,       // largura da foto central (0.7 = 70% da área)
           fotos: []           // vazio = usa as fotos de apresentacao.fotos
         },
         {
