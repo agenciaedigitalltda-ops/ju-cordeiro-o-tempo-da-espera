@@ -32,15 +32,16 @@ window.APP_CONFIG = {
     titulo: "Sobre o meu trabalho",
     texto: "",           // 2 ou 3 frases sobre o jeito da fotógrafa
     fotos: [
-      { src: "assets/fotos/carrossel/01.jpg?v=202609301037" },
-      { src: "assets/fotos/carrossel/02.jpg?v=202609301037" },
-      { src: "assets/fotos/carrossel/03.jpg?v=202609301037" },
-      { src: "assets/fotos/carrossel/04.jpg?v=202609301037" },
-      { src: "assets/fotos/carrossel/05.jpg?v=202609301037" },
-      { src: "assets/fotos/carrossel/06.jpg?v=202609301037" },
-      { src: "assets/fotos/carrossel/07.jpg?v=202609301037" },
-      { src: "assets/fotos/carrossel/08.jpg?v=202609301037" },
-      { src: "assets/fotos/carrossel/09.jpg?v=202609301037" }
+      { src: "assets/fotos/carrossel/01.jpg?v=202609301040" },
+      { src: "assets/fotos/carrossel/02.jpg?v=202609301040" },
+      { src: "assets/fotos/carrossel/03.jpg?v=202609301040" },
+      { src: "assets/fotos/carrossel/04.jpg?v=202609301040" },
+      { src: "assets/fotos/carrossel/05.jpg?v=202609301040" },
+      { src: "assets/fotos/carrossel/06.jpg?v=202609301040" },
+      { src: "assets/fotos/carrossel/07.jpg?v=202609301040" },
+      { src: "assets/fotos/carrossel/08.jpg?v=202609301040" },
+      { src: "assets/fotos/carrossel/09.jpg?v=202609301040" },
+      { src: "assets/fotos/carrossel/10.jpg?v=202609301040" }
     ],
     fotosNoFormulario: false  // true = faixa com 3 fotos na abertura (quando não houver fotos laterais)
   },
@@ -140,7 +141,7 @@ window.APP_CONFIG = {
         assinatura: "por Ju Cordeiro",
         texto: "Ensaio de gestante com estética natural, direção leve e um olhar sensível para a espera.",
         botao: "Começar",
-        fotoCentral: { src: "assets/fotos/capa.jpg?v=202609301037", foco: "45% 25%" },   // 1 foto no topo, dissolvendo para baixo
+        fotoCentral: { src: "assets/fotos/capa.jpg?v=202609301040", foco: "45% 25%" },   // 1 foto no topo, dissolvendo para baixo
         fotosLaterais: [],   // 2 fotos na vertical, uma de cada lado (1 foto = repete espelhada)   // 2 fotos na vertical, uma de cada lado (vazio = usa home.fotosHero)
         tempo: "Responda em 1 minuto e receba valores e datas no seu WhatsApp"
       },
