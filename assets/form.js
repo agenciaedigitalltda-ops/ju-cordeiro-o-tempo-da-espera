@@ -62,7 +62,8 @@
         var v = state.answers[q.id];
         return { id: q.id, pergunta: q.coluna || LP.fill(q.titulo, { nome: '' }).replace(/,\s*\?/, '?'), resposta: Array.isArray(v) ? v.join(', ') : (v || '') };
       }),
-      origem: origem,
+      // "Página de entrada" na planilha diz qual versão da abertura a pessoa viu (teste A/B)
+      origem: Object.assign({}, origem, { entrada: (origem.entrada || '') + (nomeNaAbertura ? ' · versão B (nome na abertura)' : ' · versão A (botão Começar)') }),
       pagina: location.href.split('?')[0],
       enviado_em: new Date().toISOString()
     };
