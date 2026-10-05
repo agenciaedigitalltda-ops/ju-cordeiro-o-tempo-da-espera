@@ -387,6 +387,39 @@
     return node;
   }
 
+  // Abertura com o campo do nome no lugar do botão "Começar" (boasVindas.nomeNaAbertura,
+  // ou ?abertura=nome no link para ver a prévia sem mudar o padrão)
+  var nomeNaAbertura = F.boasVindas.nomeNaAbertura === true || /[?&]abertura=nome\b/.test(location.search);
+
+  function campoNomeNaAbertura() {
+    var q = steps[1];
+    var err = el('p', { class: 'error', role: 'alert', 'aria-live': 'polite' });
+    // sem autofocus: no celular o teclado abriria por cima da foto
+    var input = el('input', {
+      class: 'field w-field', id: 'f-nome-abertura', type: 'text', 'aria-labelledby': 'w-ask',
+      autocomplete: 'name', autocapitalize: 'words', enterkeyhint: 'next', maxlength: 120, placeholder: 'Seu nome'
+    });
+    input.value = state.answers.nome || '';
+    input.addEventListener('input', function () { if (err.textContent) err.textContent = ''; });
+    function submit() {
+      var m = validate(q, input.value);
+      if (m) { err.textContent = m; input.focus(); return; }
+      input.blur();
+      LP.track('ViewContent', { content_name: F.nome });
+      state.answers.nome = normalize(q, input.value); save();
+      go(2, 1);
+    }
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
+    return el('div', { class: 'w-ask-box' }, [
+      el('p', { class: 'w-ask', id: 'w-ask', text: q.titulo }),
+      input, err,
+      el('div', { class: 'actions' }, [
+        el('button', { type: 'button', class: 'btn btn-primary btn-lg', onclick: submit },
+          ['Continuar', el('span', { class: 'arrow', 'aria-hidden': 'true', text: '→' })])
+      ])
+    ]);
+  }
+
   function renderWelcome() {
     var bv = F.boasVindas;
     // Fotos nas laterais (como uma capa). Vazio = usa home.fotosHero; sem fotos = abertura simples.
@@ -397,7 +430,7 @@
       el('h1', { class: 'w-title', 'data-fit': true, text: bv.titulo }),
       bv.assinatura ? el('p', { class: 'w-byline', text: bv.assinatura }) : null,
       el('p', { class: 'w-text', text: bv.texto }),
-      el('div', { class: 'actions' }, [
+      nomeNaAbertura ? campoNomeNaAbertura() : el('div', { class: 'actions' }, [
         el('button', { type: 'button', class: 'btn btn-primary btn-lg', 'data-autofocus': true, onclick: function () {
           LP.track('ViewContent', { content_name: F.nome });
           go(1, 1);
