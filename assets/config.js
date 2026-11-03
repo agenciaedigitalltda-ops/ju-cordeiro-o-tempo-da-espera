@@ -145,6 +145,15 @@ window.APP_CONFIG = {
         fotosLaterais: [],   // 2 fotos na vertical, uma de cada lado (1 foto = repete espelhada)   // 2 fotos na vertical, uma de cada lado (vazio = usa home.fotosHero)
         tempo: "Responda em 1 minuto e receba valores e datas no seu WhatsApp"
       },
+      /* Modo vitrine: sem perguntas, só o carrossel e o botão do WhatsApp fixo embaixo.
+         Para voltar ao formulário de 4 perguntas, apague este bloco (ou comente). */
+      soVitrine: {
+        titulo: "O Tempo da Espera",
+        texto: "Ensaio de gestante com estética natural, direção leve e um olhar sensível para a espera.",
+        botao: "Quero saber valores e datas",
+        mensagemWhatsapp: "Oi, Ju! Vim pelo anúncio e queria saber valores e datas do ensaio O Tempo da Espera.",
+        segundos: 2, formato: "2/3", tamanho: 0.7, fotos: []
+      },
       perguntaNome: "Antes de tudo, como você se chama?",
       perguntaWhatsapp: "Que bom te ver por aqui, {nome}! Qual o seu WhatsApp?",
       ajudaWhatsapp: "É por lá que você vai receber os valores e as datas.",
